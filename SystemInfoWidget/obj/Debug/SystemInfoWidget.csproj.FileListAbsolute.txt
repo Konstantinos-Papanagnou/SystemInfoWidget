@@ -1,0 +1,10 @@
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\bin\Debug\SystemInfoWidget.exe.config
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\bin\Debug\SystemInfoWidget.exe
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\bin\Debug\SystemInfoWidget.pdb
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.csprojAssemblyReference.cache
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.Properties.Resources.resources
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.csproj.GenerateResource.cache
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.csproj.CoreCompileInputs.cache
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.exe
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.pdb
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.Widget.resources
