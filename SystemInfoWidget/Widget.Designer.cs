@@ -39,11 +39,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ClockUpdater = new System.Windows.Forms.Timer(this.components);
             this.UsageUpdater = new System.Windows.Forms.Timer(this.components);
+            this.DiskPanel = new System.Windows.Forms.Panel();
             this.DragPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // DragPanel
             // 
+            this.DragPanel.Controls.Add(this.DiskPanel);
             this.DragPanel.Controls.Add(this.CPUStatusDisplay);
             this.DragPanel.Controls.Add(this.panel1);
             this.DragPanel.Controls.Add(this.CPUCoreCountDisplay);
@@ -142,6 +144,14 @@
             this.UsageUpdater.Enabled = true;
             this.UsageUpdater.Interval = 3000;
             // 
+            // DiskPanel
+            // 
+            this.DiskPanel.BackColor = System.Drawing.Color.Lime;
+            this.DiskPanel.Location = new System.Drawing.Point(3, 177);
+            this.DiskPanel.Name = "DiskPanel";
+            this.DiskPanel.Size = new System.Drawing.Size(731, 2);
+            this.DiskPanel.TabIndex = 6;
+            // 
             // Widget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,6 +180,7 @@
         private System.Windows.Forms.Label OS_Display;
         private System.Windows.Forms.Label CPUStatusDisplay;
         private System.Windows.Forms.Timer UsageUpdater;
+        private System.Windows.Forms.Panel DiskPanel;
     }
 }
 

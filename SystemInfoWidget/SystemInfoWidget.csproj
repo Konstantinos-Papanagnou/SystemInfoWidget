@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DriveLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DriveLayout.Designer.cs">
+      <DependentUpon>DriveLayout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Widget.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="SystemInfo\GPU.cs" />
     <Compile Include="SystemInfo\Memory.cs" />
     <Compile Include="SystemInfo\OS.cs" />
+    <EmbeddedResource Include="DriveLayout.resx">
+      <DependentUpon>DriveLayout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Widget.resx">
       <DependentUpon>Widget.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="diskImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

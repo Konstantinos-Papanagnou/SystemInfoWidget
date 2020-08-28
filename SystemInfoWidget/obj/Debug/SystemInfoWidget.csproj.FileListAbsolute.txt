@@ -8,3 +8,4 @@ C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug
 C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.exe
 C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.pdb
 C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.Widget.resources
+C:\Users\konst\source\repos\Projects\SystemInfoWidget\SystemInfoWidget\obj\Debug\SystemInfoWidget.DriveLayout.resources

@@ -16,6 +16,7 @@ namespace SystemInfoWidget
 {
     public partial class Widget : Form
     {
+        int DiskCount = 0;
         public Widget()
         {
             InitializeComponent();
@@ -37,6 +38,13 @@ namespace SystemInfoWidget
                 CPUStatusDisplay.ForeColor = Color.DeepPink;
             else CPUStatusDisplay.ForeColor = Color.Lime;
             CPUStatusDisplay.Text = "CPU Usage: " + cpu_usage+ "%";
+            Disk disk = new Disk();
+            if (disk.CheckForUpdates(DiskCount))
+            {
+                RemoveDisksFromPanel();
+                AddDisksToPanel();
+                DiskCount = disk.GetDiskCount();
+            }
         }
 
         private void InitializeControls()
@@ -48,6 +56,36 @@ namespace SystemInfoWidget
                 in_cpu.CPUNumberOfLogicalProcessors + "   Clock Speed: " + Math.Round(double.Parse(in_cpu.CPUClockSpeed) / 1000, 2).ToString() + "GHz" +
                 "   Maximum Clock Speed: " + Math.Round(double.Parse(in_cpu.CPUMaxClockSpeed) / 1000, 2).ToString() + "GHz";
             CPUStatusDisplay.Text = "CPU Usage: " + CPU.GetCPUUsage() + "%";
+            AddDisksToPanel();
+
+        }
+
+        private void AddDisksToPanel()
+        {
+            Disk disk = new Disk();
+            var layouts = disk.GetDriveLayouts();
+            DiskCount = disk.GetDiskCount();
+            for (int i = 0; i < layouts.Count; i++)
+            {
+                if (i == 0)
+                    layouts[i].Location = new Point(DiskPanel.Location.X + 2, DiskPanel.Location.Y + 5);
+                else
+                    layouts[i].Location = new Point(layouts[i - 1].Location.X, layouts[i - 1].Location.Y + layouts[i - 1].Size.Height + 5);
+                this.DragPanel.Controls.Add(layouts[i]);
+            }
+        }
+
+        private void RemoveDisksFromPanel()
+        {
+            for(int i = 0; i < DragPanel.Controls.Count; i++)
+            {
+                if(DragPanel.Controls[i] is DriveLayout)
+                {
+                    DragPanel.Controls.RemoveAt(i);
+                    i -= 1;
+                }
+            }
+            
         }
 
         #region FormMovement
