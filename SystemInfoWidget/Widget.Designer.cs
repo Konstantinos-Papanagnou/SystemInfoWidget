@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DragPanel = new System.Windows.Forms.Panel();
+            this.CPUStatusDisplay = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.CPUCoreCountDisplay = new System.Windows.Forms.Label();
+            this.CPUNameDisplay = new System.Windows.Forms.Label();
+            this.OS_Display = new System.Windows.Forms.Label();
             this.TimeDisplay = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ClockUpdater = new System.Windows.Forms.Timer(this.components);
-            this.CPUNameDisplay = new System.Windows.Forms.Label();
-            this.CPUCoreCountDisplay = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.OS_Display = new System.Windows.Forms.Label();
-            this.CPUStatusDisplay = new System.Windows.Forms.Label();
             this.UsageUpdater = new System.Windows.Forms.Timer(this.components);
             this.DragPanel.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,58 @@
             this.DragPanel.Size = new System.Drawing.Size(734, 794);
             this.DragPanel.TabIndex = 1;
             this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // CPUStatusDisplay
+            // 
+            this.CPUStatusDisplay.AutoSize = true;
+            this.CPUStatusDisplay.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.CPUStatusDisplay.ForeColor = System.Drawing.Color.DeepPink;
+            this.CPUStatusDisplay.Location = new System.Drawing.Point(203, 146);
+            this.CPUStatusDisplay.Name = "CPUStatusDisplay";
+            this.CPUStatusDisplay.Size = new System.Drawing.Size(90, 28);
+            this.CPUStatusDisplay.TabIndex = 6;
+            this.CPUStatusDisplay.Text = "label2";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Lime;
+            this.panel1.Location = new System.Drawing.Point(3, 82);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(731, 2);
+            this.panel1.TabIndex = 5;
+            // 
+            // CPUCoreCountDisplay
+            // 
+            this.CPUCoreCountDisplay.AutoSize = true;
+            this.CPUCoreCountDisplay.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.CPUCoreCountDisplay.ForeColor = System.Drawing.Color.Lime;
+            this.CPUCoreCountDisplay.Location = new System.Drawing.Point(12, 116);
+            this.CPUCoreCountDisplay.Name = "CPUCoreCountDisplay";
+            this.CPUCoreCountDisplay.Size = new System.Drawing.Size(56, 18);
+            this.CPUCoreCountDisplay.TabIndex = 4;
+            this.CPUCoreCountDisplay.Text = "label2";
+            // 
+            // CPUNameDisplay
+            // 
+            this.CPUNameDisplay.AutoSize = true;
+            this.CPUNameDisplay.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.CPUNameDisplay.ForeColor = System.Drawing.Color.Lime;
+            this.CPUNameDisplay.Location = new System.Drawing.Point(11, 87);
+            this.CPUNameDisplay.Name = "CPUNameDisplay";
+            this.CPUNameDisplay.Size = new System.Drawing.Size(63, 20);
+            this.CPUNameDisplay.TabIndex = 3;
+            this.CPUNameDisplay.Text = "label2";
+            // 
+            // OS_Display
+            // 
+            this.OS_Display.AutoSize = true;
+            this.OS_Display.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.OS_Display.ForeColor = System.Drawing.Color.Lime;
+            this.OS_Display.Location = new System.Drawing.Point(284, 58);
+            this.OS_Display.Name = "OS_Display";
+            this.OS_Display.Size = new System.Drawing.Size(63, 20);
+            this.OS_Display.TabIndex = 2;
+            this.OS_Display.Text = "label2";
             // 
             // TimeDisplay
             // 
@@ -84,58 +136,6 @@
             // 
             this.ClockUpdater.Enabled = true;
             this.ClockUpdater.Interval = 1000;
-            // 
-            // CPUNameDisplay
-            // 
-            this.CPUNameDisplay.AutoSize = true;
-            this.CPUNameDisplay.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.CPUNameDisplay.ForeColor = System.Drawing.Color.Lime;
-            this.CPUNameDisplay.Location = new System.Drawing.Point(11, 87);
-            this.CPUNameDisplay.Name = "CPUNameDisplay";
-            this.CPUNameDisplay.Size = new System.Drawing.Size(63, 20);
-            this.CPUNameDisplay.TabIndex = 3;
-            this.CPUNameDisplay.Text = "label2";
-            // 
-            // CPUCoreCountDisplay
-            // 
-            this.CPUCoreCountDisplay.AutoSize = true;
-            this.CPUCoreCountDisplay.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.CPUCoreCountDisplay.ForeColor = System.Drawing.Color.Lime;
-            this.CPUCoreCountDisplay.Location = new System.Drawing.Point(12, 116);
-            this.CPUCoreCountDisplay.Name = "CPUCoreCountDisplay";
-            this.CPUCoreCountDisplay.Size = new System.Drawing.Size(56, 18);
-            this.CPUCoreCountDisplay.TabIndex = 4;
-            this.CPUCoreCountDisplay.Text = "label2";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Lime;
-            this.panel1.Location = new System.Drawing.Point(3, 82);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(731, 2);
-            this.panel1.TabIndex = 5;
-            // 
-            // OS_Display
-            // 
-            this.OS_Display.AutoSize = true;
-            this.OS_Display.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.OS_Display.ForeColor = System.Drawing.Color.Lime;
-            this.OS_Display.Location = new System.Drawing.Point(284, 58);
-            this.OS_Display.Name = "OS_Display";
-            this.OS_Display.Size = new System.Drawing.Size(63, 20);
-            this.OS_Display.TabIndex = 2;
-            this.OS_Display.Text = "label2";
-            // 
-            // CPUStatusDisplay
-            // 
-            this.CPUStatusDisplay.AutoSize = true;
-            this.CPUStatusDisplay.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.CPUStatusDisplay.ForeColor = System.Drawing.Color.Lime;
-            this.CPUStatusDisplay.Location = new System.Drawing.Point(203, 146);
-            this.CPUStatusDisplay.Name = "CPUStatusDisplay";
-            this.CPUStatusDisplay.Size = new System.Drawing.Size(90, 28);
-            this.CPUStatusDisplay.TabIndex = 6;
-            this.CPUStatusDisplay.Text = "label2";
             // 
             // UsageUpdater
             // 

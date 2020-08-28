@@ -32,7 +32,11 @@ namespace SystemInfoWidget
 
         private void UpdateControls(object sender, EventArgs e)
         {
-            CPUStatusDisplay.Text = "CPU Usage: " + CPU.GetCPUUsage() + "%";
+            double cpu_usage = CPU.GetCPUUsage();
+            if (cpu_usage > 50)
+                CPUStatusDisplay.ForeColor = Color.DeepPink;
+            else CPUStatusDisplay.ForeColor = Color.Lime;
+            CPUStatusDisplay.Text = "CPU Usage: " + cpu_usage+ "%";
         }
 
         private void InitializeControls()
