@@ -26,7 +26,6 @@ namespace SystemInfoWidget.SystemInfo
 
             var memoryValues = wmiObject.Get().Cast<ManagementObject>().Select(mo => new {
                 FreePhysicalMemory = Double.Parse(mo["FreePhysicalMemory"].ToString()),
-                TotalVisibleMemorySize = Double.Parse(mo["TotalVisibleMemorySize"].ToString())
             }).FirstOrDefault();
 
             if (memoryValues != null)
