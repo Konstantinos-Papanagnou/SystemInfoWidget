@@ -22,7 +22,7 @@ namespace SystemInfoWidget.SystemInfo
     }
     public class Disk
     {
-        readonly DriveInfo[] allDrives;
+        DriveInfo[] allDrives;
         readonly ManagementClass m_class;
         public Disk()
         {
@@ -45,6 +45,7 @@ namespace SystemInfoWidget.SystemInfo
 
         public bool CheckForUpdates(int drives)
         {
+            allDrives = DriveInfo.GetDrives();
             return allDrives.Length != drives;
         }
 

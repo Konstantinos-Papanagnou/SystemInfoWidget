@@ -17,7 +17,7 @@ namespace SystemInfoWidget
     public partial class Widget : Form
     {
         int DiskCount = 0;
-        Disk disk;
+        readonly Disk disk;
         List<DriveLayout> layouts;
         public Widget()
         {
