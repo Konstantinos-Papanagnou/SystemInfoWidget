@@ -43,6 +43,7 @@
             this.DiskCapacity.Name = "DiskCapacity";
             this.DiskCapacity.Size = new System.Drawing.Size(510, 23);
             this.DiskCapacity.TabIndex = 0;
+            this.DiskCapacity.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DriveLayout_MouseMove);
             // 
             // DriveNameDiaplay
             // 
@@ -54,6 +55,7 @@
             this.DriveNameDiaplay.Size = new System.Drawing.Size(76, 23);
             this.DriveNameDiaplay.TabIndex = 1;
             this.DriveNameDiaplay.Text = "label1";
+            this.DriveNameDiaplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DriveLayout_MouseMove);
             // 
             // SpaceInfoDisplay
             // 
@@ -65,6 +67,7 @@
             this.SpaceInfoDisplay.Size = new System.Drawing.Size(63, 20);
             this.SpaceInfoDisplay.TabIndex = 2;
             this.SpaceInfoDisplay.Text = "label1";
+            this.SpaceInfoDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DriveLayout_MouseMove);
             // 
             // DiskActivity
             // 
@@ -74,6 +77,7 @@
             this.DiskActivity.Size = new System.Drawing.Size(48, 48);
             this.DiskActivity.TabIndex = 3;
             this.DiskActivity.TabStop = false;
+            this.DiskActivity.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DriveLayout_MouseMove);
             // 
             // FormatDisplay
             // 
@@ -84,6 +88,7 @@
             this.FormatDisplay.Size = new System.Drawing.Size(46, 17);
             this.FormatDisplay.TabIndex = 4;
             this.FormatDisplay.Text = "label1";
+            this.FormatDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DriveLayout_MouseMove);
             // 
             // DriveTypeDisplay
             // 
@@ -95,6 +100,7 @@
             this.DriveTypeDisplay.Size = new System.Drawing.Size(76, 23);
             this.DriveTypeDisplay.TabIndex = 5;
             this.DriveTypeDisplay.Text = "label1";
+            this.DriveTypeDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DriveLayout_MouseMove);
             // 
             // DriveLayout
             // 

@@ -74,6 +74,7 @@
             this.MemoryDisplay.Size = new System.Drawing.Size(90, 28);
             this.MemoryDisplay.TabIndex = 8;
             this.MemoryDisplay.Text = "label2";
+            this.MemoryDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // DiskPanel
             // 
@@ -82,6 +83,7 @@
             this.DiskPanel.Name = "DiskPanel";
             this.DiskPanel.Size = new System.Drawing.Size(740, 2);
             this.DiskPanel.TabIndex = 6;
+            this.DiskPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // CPUStatusDisplay
             // 
@@ -93,6 +95,7 @@
             this.CPUStatusDisplay.Size = new System.Drawing.Size(90, 28);
             this.CPUStatusDisplay.TabIndex = 6;
             this.CPUStatusDisplay.Text = "label2";
+            this.CPUStatusDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // panel1
             // 
@@ -101,6 +104,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(737, 2);
             this.panel1.TabIndex = 5;
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // CPUCoreCountDisplay
             // 
@@ -112,6 +116,7 @@
             this.CPUCoreCountDisplay.Size = new System.Drawing.Size(56, 18);
             this.CPUCoreCountDisplay.TabIndex = 4;
             this.CPUCoreCountDisplay.Text = "label2";
+            this.CPUCoreCountDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // CPUNameDisplay
             // 
@@ -123,6 +128,7 @@
             this.CPUNameDisplay.Size = new System.Drawing.Size(63, 20);
             this.CPUNameDisplay.TabIndex = 3;
             this.CPUNameDisplay.Text = "label2";
+            this.CPUNameDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // OS_Display
             // 
@@ -134,6 +140,7 @@
             this.OS_Display.Size = new System.Drawing.Size(63, 20);
             this.OS_Display.TabIndex = 2;
             this.OS_Display.Text = "label2";
+            this.OS_Display.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // TimeDisplay
             // 
@@ -145,6 +152,7 @@
             this.TimeDisplay.Size = new System.Drawing.Size(63, 20);
             this.TimeDisplay.TabIndex = 1;
             this.TimeDisplay.Text = "label2";
+            this.TimeDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // label1
             // 
@@ -156,6 +164,7 @@
             this.label1.Size = new System.Drawing.Size(506, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "System Info Widget By Konstantinos Pap";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // ClockUpdater
             // 
@@ -187,6 +196,7 @@
             this.Controls.Add(this.DragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Widget";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Form1";
             this.DragPanel.ResumeLayout(false);

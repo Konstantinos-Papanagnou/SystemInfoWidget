@@ -20,6 +20,7 @@ namespace SystemInfoWidget
         int DiskCount = 0;
         readonly Disk disk;
         List<DriveLayout> layouts;
+        Thread DiskThread;
         public Widget()
         {
             InitializeComponent();
@@ -28,8 +29,8 @@ namespace SystemInfoWidget
             this.BackColor = this.TransparencyKey = Color.Turquoise;
             ClockUpdater.Tick += Updater_Tick;
             UsageUpdater.Tick += UpdateControls;
-            Thread t = new Thread(new ThreadStart(UpdateDiskActivity));
-            t.Start();
+            DiskThread = new Thread(new ThreadStart(UpdateDiskActivity));
+            DiskThread.Start();
         }
 
         private void UpdateDiskActivity()
@@ -145,6 +146,9 @@ namespace SystemInfoWidget
 
         private void ExitLabel_Click(object sender, EventArgs e)
         {
+            DiskThread.Abort();
+            ClockUpdater.Stop();
+            UsageUpdater.Stop();
             Application.Exit();
         }
     }
