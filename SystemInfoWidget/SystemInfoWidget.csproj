@@ -98,5 +98,8 @@
   <ItemGroup>
     <None Include="diskImage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="diskImageBusy.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

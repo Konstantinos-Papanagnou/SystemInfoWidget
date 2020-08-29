@@ -31,10 +31,10 @@
             this.DiskCapacity = new System.Windows.Forms.ProgressBar();
             this.DriveNameDiaplay = new System.Windows.Forms.Label();
             this.SpaceInfoDisplay = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DiskActivity = new System.Windows.Forms.PictureBox();
             this.FormatDisplay = new System.Windows.Forms.Label();
             this.DriveTypeDisplay = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DiskActivity)).BeginInit();
             this.SuspendLayout();
             // 
             // DiskCapacity
@@ -66,14 +66,14 @@
             this.SpaceInfoDisplay.TabIndex = 2;
             this.SpaceInfoDisplay.Text = "label1";
             // 
-            // pictureBox1
+            // DiskActivity
             // 
-            this.pictureBox1.Image = global::SystemInfoWidget.Properties.Resources.diskImage;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.DiskActivity.Image = global::SystemInfoWidget.Properties.Resources.diskImage;
+            this.DiskActivity.Location = new System.Drawing.Point(3, 4);
+            this.DiskActivity.Name = "DiskActivity";
+            this.DiskActivity.Size = new System.Drawing.Size(48, 48);
+            this.DiskActivity.TabIndex = 3;
+            this.DiskActivity.TabStop = false;
             // 
             // FormatDisplay
             // 
@@ -102,14 +102,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.DriveTypeDisplay);
             this.Controls.Add(this.FormatDisplay);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.DiskActivity);
             this.Controls.Add(this.SpaceInfoDisplay);
             this.Controls.Add(this.DriveNameDiaplay);
             this.Controls.Add(this.DiskCapacity);
             this.Name = "DriveLayout";
             this.Size = new System.Drawing.Size(587, 84);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DriveLayout_MouseMove);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DiskActivity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,7 +120,7 @@
         private System.Windows.Forms.ProgressBar DiskCapacity;
         private System.Windows.Forms.Label DriveNameDiaplay;
         private System.Windows.Forms.Label SpaceInfoDisplay;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox DiskActivity;
         private System.Windows.Forms.Label FormatDisplay;
         private System.Windows.Forms.Label DriveTypeDisplay;
     }

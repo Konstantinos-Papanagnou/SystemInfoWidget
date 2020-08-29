@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
+using SystemInfoWidget.Properties;
 
 namespace SystemInfoWidget
 {
@@ -23,6 +24,14 @@ namespace SystemInfoWidget
             FormatDisplay.Text = DriveFormat;
             DiskCapacity.Maximum = (int)TotalSpace;
             DiskCapacity.Value = (int)TotalSpace - (int)AvailableSpace;
+        }
+
+        public void SetState(bool idle)
+        {
+            if (idle)
+                DiskActivity.Image = Resources.diskImage;
+            else
+                DiskActivity.Image = Resources.diskImageBusy;
         }
 
         #region FormMovement

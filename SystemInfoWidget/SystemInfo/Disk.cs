@@ -1,19 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SystemInfoWidget.SystemInfo
 {
+    public struct DiskActivity
+    {
+        public bool Idle;
+        public string Volume;
+        public DiskActivity(string Volume, bool Idle)
+        {
+            this.Volume = Volume;
+            this.Idle = Idle;
+        }
+    }
     public class Disk
     {
-        DriveInfo[] allDrives;
+        readonly DriveInfo[] allDrives;
+        readonly ManagementClass m_class;
         public Disk()
         {
             allDrives = DriveInfo.GetDrives();
+            m_class = new ManagementClass("Win32_PerfFormattedData_PerfDisk_PhysicalDisk");
+        }
+
+        public List<DiskActivity> GetDiskActivity()
+        {
+            ManagementObjectCollection m_collect = m_class.GetInstances();
+            List<DiskActivity> d_act = new List<DiskActivity>();
+            foreach (var m_item in m_collect)
+            {
+                if (m_item["Name"].ToString() == "_Total")
+                    continue;
+                d_act.Add(new DiskActivity(m_item["Name"].ToString().Remove(0,2), Convert.ToUInt64(m_item["DiskBytesPersec"]) == 0));
+            }
+            return d_act;
         }
 
         public bool CheckForUpdates(int drives)
@@ -29,12 +56,16 @@ namespace SystemInfoWidget.SystemInfo
         public List<DriveLayout> GetDriveLayouts()
         {
             List<DriveLayout> layouts = new List<DriveLayout>();
-            for(int i = 0; i < allDrives.Length; i++)
+            for (int i = 0; i < allDrives.Length; i++)
             {
                 DriveType type = GetDriveType(i);
 
                 if (type == DriveType.Fixed || type == DriveType.Removable)
-                    layouts.Add(new DriveLayout(GetDriveVolume(i), type.ToString(), GetStorage(i), GetDriveFormat(i), GetTotalSize(i), GetAvailableStorage(i)));
+                {
+                    DriveLayout temp = new DriveLayout(GetDriveVolume(i), type.ToString(), GetStorage(i), GetDriveFormat(i), GetTotalSize(i), GetAvailableStorage(i));
+                    temp.Tag = GetDriveVolume(i);
+                    layouts.Add(temp);
+                }
             }
             return layouts;
         }
@@ -73,4 +104,6 @@ namespace SystemInfoWidget.SystemInfo
             return allDrives[drive].DriveType;
         }
     }
+
+   
 }

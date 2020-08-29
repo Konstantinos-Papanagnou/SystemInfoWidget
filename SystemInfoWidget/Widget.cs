@@ -17,13 +17,33 @@ namespace SystemInfoWidget
     public partial class Widget : Form
     {
         int DiskCount = 0;
+        Disk disk;
+        List<DriveLayout> layouts;
         public Widget()
         {
             InitializeComponent();
+            disk = new Disk();
             InitializeControls();
             this.BackColor = this.TransparencyKey = Color.Turquoise;
             ClockUpdater.Tick += Updater_Tick;
             UsageUpdater.Tick += UpdateControls;
+            Thread t = new Thread(new ThreadStart(UpdateDiskActivity));
+            t.Start();
+        }
+
+        private void UpdateDiskActivity()
+        {
+            while (true)
+            {
+                var d_act = disk.GetDiskActivity();
+                foreach (var d in d_act)
+                {
+                    foreach (var layout in layouts)
+                        if (layout.Tag.ToString().Contains(d.Volume))
+                            layout.SetState(d.Idle);
+                }
+                Thread.Sleep(200);
+            }
         }
 
         private void Updater_Tick(object sender, EventArgs e)
@@ -38,7 +58,6 @@ namespace SystemInfoWidget
                 CPUStatusDisplay.ForeColor = Color.DeepPink;
             else CPUStatusDisplay.ForeColor = Color.Lime;
             CPUStatusDisplay.Text = "CPU Usage: " + cpu_usage+ "%";
-            Disk disk = new Disk();
             if (disk.CheckForUpdates(DiskCount))
             {
                 RemoveDisksFromPanel();
@@ -56,14 +75,12 @@ namespace SystemInfoWidget
                 in_cpu.CPUNumberOfLogicalProcessors + "   Clock Speed: " + Math.Round(double.Parse(in_cpu.CPUClockSpeed) / 1000, 2).ToString() + "GHz" +
                 "   Maximum Clock Speed: " + Math.Round(double.Parse(in_cpu.CPUMaxClockSpeed) / 1000, 2).ToString() + "GHz";
             CPUStatusDisplay.Text = "CPU Usage: " + CPU.GetCPUUsage() + "%";
-            AddDisksToPanel();
-
+            AddDisksToPanel();            
         }
 
         private void AddDisksToPanel()
         {
-            Disk disk = new Disk();
-            var layouts = disk.GetDriveLayouts();
+            layouts = disk.GetDriveLayouts();
             DiskCount = disk.GetDiskCount();
             for (int i = 0; i < layouts.Count; i++)
             {
@@ -77,6 +94,7 @@ namespace SystemInfoWidget
 
         private void RemoveDisksFromPanel()
         {
+            layouts.Clear();
             for(int i = 0; i < DragPanel.Controls.Count; i++)
             {
                 if(DragPanel.Controls[i] is DriveLayout)
