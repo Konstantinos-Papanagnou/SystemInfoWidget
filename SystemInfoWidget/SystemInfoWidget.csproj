@@ -53,6 +53,12 @@
     <Compile Include="DriveLayout.Designer.cs">
       <DependentUpon>DriveLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="GpuLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GpuLayout.Designer.cs">
+      <DependentUpon>GpuLayout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Widget.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="SystemInfo\OS.cs" />
     <EmbeddedResource Include="DriveLayout.resx">
       <DependentUpon>DriveLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GpuLayout.resx">
+      <DependentUpon>GpuLayout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Widget.resx">
       <DependentUpon>Widget.cs</DependentUpon>

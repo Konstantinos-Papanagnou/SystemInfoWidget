@@ -41,11 +41,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ClockUpdater = new System.Windows.Forms.Timer(this.components);
             this.UsageUpdater = new System.Windows.Forms.Timer(this.components);
+            this.ExitLabel = new System.Windows.Forms.Label();
             this.DragPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // DragPanel
             // 
+            this.DragPanel.Controls.Add(this.ExitLabel);
             this.DragPanel.Controls.Add(this.MemoryDisplay);
             this.DragPanel.Controls.Add(this.DiskPanel);
             this.DragPanel.Controls.Add(this.CPUStatusDisplay);
@@ -58,7 +60,7 @@
             this.DragPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DragPanel.Location = new System.Drawing.Point(0, 0);
             this.DragPanel.Name = "DragPanel";
-            this.DragPanel.Size = new System.Drawing.Size(734, 794);
+            this.DragPanel.Size = new System.Drawing.Size(740, 794);
             this.DragPanel.TabIndex = 1;
             this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
@@ -76,9 +78,9 @@
             // DiskPanel
             // 
             this.DiskPanel.BackColor = System.Drawing.Color.Lime;
-            this.DiskPanel.Location = new System.Drawing.Point(0, 352);
+            this.DiskPanel.Location = new System.Drawing.Point(0, 365);
             this.DiskPanel.Name = "DiskPanel";
-            this.DiskPanel.Size = new System.Drawing.Size(731, 2);
+            this.DiskPanel.Size = new System.Drawing.Size(740, 2);
             this.DiskPanel.TabIndex = 6;
             // 
             // CPUStatusDisplay
@@ -97,7 +99,7 @@
             this.panel1.BackColor = System.Drawing.Color.Lime;
             this.panel1.Location = new System.Drawing.Point(3, 82);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(731, 2);
+            this.panel1.Size = new System.Drawing.Size(737, 2);
             this.panel1.TabIndex = 5;
             // 
             // CPUCoreCountDisplay
@@ -149,7 +151,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(105, 9);
+            this.label1.Location = new System.Drawing.Point(141, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(506, 28);
             this.label1.TabIndex = 0;
@@ -165,11 +167,23 @@
             this.UsageUpdater.Enabled = true;
             this.UsageUpdater.Interval = 3000;
             // 
+            // ExitLabel
+            // 
+            this.ExitLabel.AutoSize = true;
+            this.ExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ExitLabel.ForeColor = System.Drawing.Color.Lime;
+            this.ExitLabel.Location = new System.Drawing.Point(698, 8);
+            this.ExitLabel.Name = "ExitLabel";
+            this.ExitLabel.Size = new System.Drawing.Size(30, 29);
+            this.ExitLabel.TabIndex = 9;
+            this.ExitLabel.Text = "X";
+            this.ExitLabel.Click += new System.EventHandler(this.ExitLabel_Click);
+            // 
             // Widget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 794);
+            this.ClientSize = new System.Drawing.Size(740, 794);
             this.Controls.Add(this.DragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Widget";
@@ -195,6 +209,7 @@
         private System.Windows.Forms.Timer UsageUpdater;
         private System.Windows.Forms.Panel DiskPanel;
         private System.Windows.Forms.Label MemoryDisplay;
+        private System.Windows.Forms.Label ExitLabel;
     }
 }
 

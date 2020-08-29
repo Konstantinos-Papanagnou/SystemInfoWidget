@@ -80,6 +80,20 @@ namespace SystemInfoWidget
             CPUStatusDisplay.Text = "CPU Usage: " + CPU.GetCPUUsage() + "%";
             AddDisksToPanel();
             MemoryDisplay.Text = new Memory().GetMemStats();
+            AddGPUToPanel();
+        }
+
+        private void AddGPUToPanel()
+        {
+            var Gpulayouts = GPU.GetGPUs();
+            for (int i = 0; i < Gpulayouts.Count; i++)
+            {
+                if (i == 0)
+                    Gpulayouts[i].Location = new Point(MemoryDisplay.Location.X, MemoryDisplay.Location.Y + MemoryDisplay.Size.Height + 2);
+                else
+                    Gpulayouts[i].Location = new Point(Gpulayouts[i - 1].Location.X + Gpulayouts[i - 1].Size.Width + 5, Gpulayouts[i - 1].Location.Y);
+                this.DragPanel.Controls.Add(Gpulayouts[i]);
+            }
         }
 
         private void AddDisksToPanel()
@@ -128,5 +142,10 @@ namespace SystemInfoWidget
             }
         }
         #endregion
+
+        private void ExitLabel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
