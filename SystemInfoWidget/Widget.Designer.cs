@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DragPanel = new System.Windows.Forms.Panel();
+            this.MemoryDisplay = new System.Windows.Forms.Label();
             this.DiskPanel = new System.Windows.Forms.Panel();
             this.CPUStatusDisplay = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,6 +46,7 @@
             // 
             // DragPanel
             // 
+            this.DragPanel.Controls.Add(this.MemoryDisplay);
             this.DragPanel.Controls.Add(this.DiskPanel);
             this.DragPanel.Controls.Add(this.CPUStatusDisplay);
             this.DragPanel.Controls.Add(this.panel1);
@@ -60,10 +62,21 @@
             this.DragPanel.TabIndex = 1;
             this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
+            // MemoryDisplay
+            // 
+            this.MemoryDisplay.AutoSize = true;
+            this.MemoryDisplay.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.MemoryDisplay.ForeColor = System.Drawing.Color.Lime;
+            this.MemoryDisplay.Location = new System.Drawing.Point(10, 195);
+            this.MemoryDisplay.Name = "MemoryDisplay";
+            this.MemoryDisplay.Size = new System.Drawing.Size(90, 28);
+            this.MemoryDisplay.TabIndex = 8;
+            this.MemoryDisplay.Text = "label2";
+            // 
             // DiskPanel
             // 
             this.DiskPanel.BackColor = System.Drawing.Color.Lime;
-            this.DiskPanel.Location = new System.Drawing.Point(3, 177);
+            this.DiskPanel.Location = new System.Drawing.Point(0, 352);
             this.DiskPanel.Name = "DiskPanel";
             this.DiskPanel.Size = new System.Drawing.Size(731, 2);
             this.DiskPanel.TabIndex = 6;
@@ -73,7 +86,7 @@
             this.CPUStatusDisplay.AutoSize = true;
             this.CPUStatusDisplay.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.CPUStatusDisplay.ForeColor = System.Drawing.Color.DeepPink;
-            this.CPUStatusDisplay.Location = new System.Drawing.Point(203, 146);
+            this.CPUStatusDisplay.Location = new System.Drawing.Point(283, 154);
             this.CPUStatusDisplay.Name = "CPUStatusDisplay";
             this.CPUStatusDisplay.Size = new System.Drawing.Size(90, 28);
             this.CPUStatusDisplay.TabIndex = 6;
@@ -181,6 +194,7 @@
         private System.Windows.Forms.Label CPUStatusDisplay;
         private System.Windows.Forms.Timer UsageUpdater;
         private System.Windows.Forms.Panel DiskPanel;
+        private System.Windows.Forms.Label MemoryDisplay;
     }
 }
 

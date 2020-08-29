@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Threading;
 using SystemInfoWidget.SystemInfo;
 using System.Diagnostics;
+using System.Management;
 
 namespace SystemInfoWidget
 {
@@ -64,6 +65,8 @@ namespace SystemInfoWidget
                 AddDisksToPanel();
                 DiskCount = disk.GetDiskCount();
             }
+            MemoryDisplay.Text = new Memory().GetMemStats();
+
         }
 
         private void InitializeControls()
@@ -75,7 +78,8 @@ namespace SystemInfoWidget
                 in_cpu.CPUNumberOfLogicalProcessors + "   Clock Speed: " + Math.Round(double.Parse(in_cpu.CPUClockSpeed) / 1000, 2).ToString() + "GHz" +
                 "   Maximum Clock Speed: " + Math.Round(double.Parse(in_cpu.CPUMaxClockSpeed) / 1000, 2).ToString() + "GHz";
             CPUStatusDisplay.Text = "CPU Usage: " + CPU.GetCPUUsage() + "%";
-            AddDisksToPanel();            
+            AddDisksToPanel();
+            MemoryDisplay.Text = new Memory().GetMemStats();
         }
 
         private void AddDisksToPanel()
