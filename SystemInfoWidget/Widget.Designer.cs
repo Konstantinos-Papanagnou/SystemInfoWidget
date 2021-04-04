@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DragPanel = new System.Windows.Forms.Panel();
+            this.ExitLabel = new System.Windows.Forms.Label();
             this.MemoryDisplay = new System.Windows.Forms.Label();
             this.DiskPanel = new System.Windows.Forms.Panel();
             this.CPUStatusDisplay = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ClockUpdater = new System.Windows.Forms.Timer(this.components);
             this.UsageUpdater = new System.Windows.Forms.Timer(this.components);
-            this.ExitLabel = new System.Windows.Forms.Label();
             this.DragPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,18 @@
             this.DragPanel.Size = new System.Drawing.Size(740, 794);
             this.DragPanel.TabIndex = 1;
             this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // ExitLabel
+            // 
+            this.ExitLabel.AutoSize = true;
+            this.ExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ExitLabel.ForeColor = System.Drawing.Color.Lime;
+            this.ExitLabel.Location = new System.Drawing.Point(698, 8);
+            this.ExitLabel.Name = "ExitLabel";
+            this.ExitLabel.Size = new System.Drawing.Size(30, 29);
+            this.ExitLabel.TabIndex = 9;
+            this.ExitLabel.Text = "X";
+            this.ExitLabel.Click += new System.EventHandler(this.ExitLabel_Click);
             // 
             // MemoryDisplay
             // 
@@ -175,18 +187,6 @@
             // 
             this.UsageUpdater.Enabled = true;
             this.UsageUpdater.Interval = 3000;
-            // 
-            // ExitLabel
-            // 
-            this.ExitLabel.AutoSize = true;
-            this.ExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ExitLabel.ForeColor = System.Drawing.Color.Lime;
-            this.ExitLabel.Location = new System.Drawing.Point(698, 8);
-            this.ExitLabel.Name = "ExitLabel";
-            this.ExitLabel.Size = new System.Drawing.Size(30, 29);
-            this.ExitLabel.TabIndex = 9;
-            this.ExitLabel.Text = "X";
-            this.ExitLabel.Click += new System.EventHandler(this.ExitLabel_Click);
             // 
             // Widget
             // 
